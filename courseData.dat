@@ -1,0 +1,12 @@
+COSC117,Programmming Fundamentals,4
+COSC120,Computer Science I,4,COSC117
+COSC220,Computer Science II,4,COSC120,MATH210
+COSC250,Microcomputer Organization,4,COSC120
+COSC320,Advanced Data Structures and Algorithm Analysis,4,COSC220,MATH210
+COSC350,Systems Software,4,COSC220,COSC250
+COSC362,Theory of Computation,3,COSC120,COSC210
+COSC370,Computer Networks,3,COSC220,MATH210
+COSC386,Database Implementation,3,COSC220,MATH210
+COSC420,High-Performance Computing,4,COSC320
+COSC422,Organization of Programming Languages,3,COSC220
+MATH210,Introduction to Discrete Mathematics,4

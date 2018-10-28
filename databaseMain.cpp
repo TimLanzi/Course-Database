@@ -8,6 +8,10 @@
 
 using namespace std;
 
+/*	Takes a reference to the data stream and a reference to the (at this point
+ *  empty) course data linked list. Populates the linked list with the data
+ *	from the input file.
+ */
 void makeCourseLL(ifstream &in, node<Course>* &data)
 {
 	string line;
@@ -81,7 +85,7 @@ void makeCourseLL(ifstream &in, node<Course>* &data)
 	}
 }
 
-//define formatted print function
+/*	Pretty print function. Used to print formatted tables for data in linked lists	*/
 void prettyPrintList(node<Course>* list)
 {
 	for(node<Course>* c = list; c!= NULL; c=c->next)
@@ -90,6 +94,11 @@ void prettyPrintList(node<Course>* list)
 	}
 }
 
+/*	Insert course function. Takes a reference to the course data linked list.
+ *	Takes information about a new course to be added to the database as input
+ *	from the user. This information is compiled into a new course node to be
+ * added to the linked list.
+ */
 void insertCourse(node<Course>* &data)
 {
 	string prereq;
@@ -136,6 +145,11 @@ void insertCourse(node<Course>* &data)
 	InsertNode(data, newCourse);	//finalizes insertion of new course
 }
 
+/*	Modify course function. Takes a reference to the course data linked list,
+ *	the mody menu, and the delete/add menu as arguments. The user specifies the
+ *	course they wish to modify, then is presented with sub-menus to indicate the
+ * 	changes they want to make.
+ */
 void modifyCourse(node<Course>* &data, vector<string> modifyMenu, vector<string> deleteAddMenu)
 {
 	string prereq;
@@ -232,6 +246,11 @@ void modifyCourse(node<Course>* &data, vector<string> modifyMenu, vector<string>
 	} while(FetchYesNo(prompt));	//while condition is user answers yes
 }
 
+/*	Delete a course function. Takes a reference to the course data linked list.
+ *	The user is asked which course they wish to delete. Once the user has input
+ *	their choice, if the course is valid and it exists in the list, then the
+ *	course will be removed from the list.
+ */
 void deleteCourse(node<Course>* &data)
 {
 	cout << "Which course would you like to delete?" <<endl;
@@ -256,6 +275,11 @@ void deleteCourse(node<Course>* &data)
 	}
 }
 
+/*	Function to retrieve course information. Takes a reference to the course
+ *	data linked list and the search menu. Once called, the function displays
+ *	the menu to determine the users search preference. The user can then narrow
+ *	the search by as many of the categories as they wish.
+ */
 void retrieveCourseInfo(node<Course>* &data, vector<string> searchMenu)
 {
 	string id;
@@ -357,6 +381,7 @@ void retrieveCourseInfo(node<Course>* &data, vector<string> searchMenu)
 	}
 }
 
+//main function
 int main(int argc, char **argv)
 {
 	  //define linked list for course data
